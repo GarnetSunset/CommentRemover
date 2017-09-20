@@ -4,6 +4,11 @@ import sys
 
 owd = os.getcwd()
 
+if not os.path.exists("DoYaThing"):
+    os.makedirs("DoYaThing")
+    print("Put Files In \"DoYaThing\" Please")
+    sys.exit()
+
 for dname, dirs, files in os.walk("DoYaThing"):
     for fname in files:
         fpath = os.path.join(dname, fname)
